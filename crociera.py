@@ -76,5 +76,4 @@ class Crociera:
             if item.cabina is not None:
 
 
-
         # TODO

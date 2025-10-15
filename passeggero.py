@@ -32,3 +32,4 @@ class Passeggero:
         return (f"Codice Passeggero: {self._cod_passeggero}, "
                 f"Nome: {self._nome}, "
                 f"Cognome: {self._cognome}")
+

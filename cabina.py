@@ -121,3 +121,4 @@ class Animali(Cabina):
                 f"Ponte: {self.ponte}, "
                 f"Prezzo: {self.prezzo}, "
                 f"Massimo animali ammessi: {self._max_animali}")
+
