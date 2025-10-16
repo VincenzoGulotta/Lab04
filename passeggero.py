@@ -5,16 +5,6 @@ class Passeggero:
         self._cognome = cognome
         self.cabina = None
 
-    @property
-    def cod_passeggero(self):
-        return self._cod_passeggero
-
-    @cod_passeggero.setter
-    def cod_passeggero(self, valore):
-        if not isinstance(int(valore), int):
-            raise ValueError("Inserire un numero")
-        self._cod_passeggero = valore
-
     def __eq__(self, other):
         if isinstance(other, Passeggero):
             return self._cod_passeggero == other._cod_passeggero
