@@ -5,7 +5,9 @@ class Cabina:
         self._ponte = ponte
         self._prezzo = int(prezzo)
         self.passeggero = None
-
+        self.disponibilita = "Disponibile"
+        if self.passeggero is not None:                 # Verifico che alla cabina non sia stato già assegnato un passeggero
+            self.disponibilita = "Non disponibile"
 
     def __eq__(self, other):
         if isinstance(other, Cabina):
@@ -15,27 +17,19 @@ class Cabina:
     def assegna_passeggero(self, passeggero):
         self.passeggero = passeggero
 
-    def __repr__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
-
-        return (f"{self._cod_cabina} | "
-                f"{self._num_letti} letti - "
+    def main_print(self):                      # Ritorna i dati presenti in tutte le cabine per facilitare la stampa
+        return (f"{self._num_letti} letti - "
                 f"Ponte {self._ponte} - "
                 f"Prezzo {self._prezzo}$ - "
-                f"{disponibilità}")
+                f"{self.disponibilita}")
+
+    def __repr__(self):
+        return (f"{self._cod_cabina} | "
+                f"{self.main_print()}")
 
     def __str__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
-
         return (f"{self._cod_cabina} | "
-                f"{self._num_letti} letti - "
-                f"Ponte {self._ponte} - "
-                f"Prezzo {self._prezzo}$ - "
-                f"{disponibilità}")
+                f"{self.main_print()}")
 
 
 class Deluxe(Cabina):
@@ -44,30 +38,13 @@ class Deluxe(Cabina):
         self._tipologia = tipologia
         self._prezzo = int(prezzo) * 1.2
 
-
     def __repr__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
-
         return (f"{self._cod_cabina} - Deluxe | "
-                f"{self._num_letti} letti - "
-                f"Ponte {self._ponte} - "
-                f"Prezzo {self._prezzo}$ - "
-                f"Tipologia: {self._tipologia} - "
-                f"{disponibilità}")
+                f"{self.main_print()}")
 
     def __str__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
-
         return (f"{self._cod_cabina} - Deluxe | "
-                f"{self._num_letti} letti - "
-                f"Ponte {self._ponte} - "
-                f"Prezzo {self._prezzo}$ - "
-                f"Tipologia: {self._tipologia} - "
-                f"{disponibilità}")
+                f"{self.main_print()}")
 
 
 class Animali(Cabina):
@@ -77,25 +54,9 @@ class Animali(Cabina):
         self._prezzo = int(prezzo) * (1 + (0.1 * int(self._max_animali)))
 
     def __repr__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
         return (f"{self._cod_cabina} - Animali | "
-                f"{self._num_letti} letti - "
-                f"Ponte {self._ponte} - "
-                f"Prezzo {self._prezzo}$ -"
-                f"Max animali: {self._max_animali}"
-                f"{disponibilità}")
+                f"{self.main_print()}")
 
     def __str__(self):
-        disponibilità = "Disponibile"
-        if self.passeggero is not None:
-            disponibilità = "Non disponibile"
-
         return (f"{self._cod_cabina} - Animali | "
-                f"{self._num_letti} letti - "
-                f"Ponte {self._ponte} - "
-                f"Prezzo {self._prezzo}$ - "
-                f"Max animali: {self._max_animali} - "
-                f"{disponibilità}")
-
+                f"{self.main_print()}")

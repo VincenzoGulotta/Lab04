@@ -5,6 +5,7 @@ class Passeggero:
         self._cognome = cognome
         self.cabina = None
 
+
     def __eq__(self, other):
         if isinstance(other, Passeggero):
             return self._cod_passeggero == other._cod_passeggero

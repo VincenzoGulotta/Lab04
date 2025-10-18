@@ -52,14 +52,14 @@ class Crociera:
         cabina = None                                   # tra oggetti utilizzando __eq__()
 
         for item in self._lista_passeggeri:             # Itero nella lista passeggeri
-            if item.cod_passeggero == cod_passeggero:   # Verifico che il codice inserito esista
+            if item._cod_passeggero == cod_passeggero:   # Verifico che il codice inserito esista
                 if item.cabina is None:                 # Verifico che il passeggero non abbia già una cabina
                     passeggero = item                   # Salvo temporaneamente l'oggetto passeggero
                 else:
                     raise Exception("Il Passeggero possiede già una cabina")
 
         for item in self._lista_cabine:                 # Itero nella lista cabine
-            if item.cod_cabina == cod_cabina:           # Verifico che il codice inserito esista
+            if item._cod_cabina == cod_cabina:           # Verifico che il codice inserito esista
                 if item.passeggero is None:             # Verifico che alla cabina non sia stato già assegnato un passeggero
                     cabina = item                       # Salvo temporaneamente l'oggetto cabina
                 else:
